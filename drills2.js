@@ -43,3 +43,36 @@ console.log(decode('craft') + decode('block') + decode('argon') + decode('meter'
 
 
 //'craft block argon meter bells brown croon droop'
+
+function daysInMonth(month, leapYear) {
+  switch (month) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      return result = `${month} has 31 days.`;
+      break;
+    case 'February':
+      if (leapYear === true) {
+        return result = `${month} has 29 days.`;
+      }
+      if (leapYear === false) {
+        return result = `${month} has 28 days.`;
+      }
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      return result = `${month} has 30 days.`;
+      break;
+
+    default:
+      throw new Error('Must provide a valid month');
+  }
+}
+
+console.log(daysInMonth('February', false));
