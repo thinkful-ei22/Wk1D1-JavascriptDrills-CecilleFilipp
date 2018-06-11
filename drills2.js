@@ -1,3 +1,7 @@
+'use strict';
+
+//Jedi name
+
 function jediName (firstName, lastName) {
   const part1 = lastName.slice(0, 3);
   const part2 = firstName.slice(0, 2);
@@ -7,22 +11,26 @@ function jediName (firstName, lastName) {
 
 console.log(jediName('Cecille', 'Salazar'));
 
+//To infinity...
+
 function beyond (num) {
   if (num === Infinity || num === -Infinity) {
-    console.log("And beyond");
+    console.log('And beyond');
   }
   if (num > 0 && num !== Infinity) {
-    console.log("To infinity");
+    console.log('To infinity');
   }
   if (num < 0 && num !== -Infinity) {
-    console.log("To negative infinity");
+    console.log('To negative infinity');
   }
   if (num === 0) {
-    console.log("Staying home");
+    console.log('Staying home');
   }
 }
 
 beyond(-Infinity);
+
+//cracking the code
 
 function decode (string) {
   const firstLetter = string.charAt(0);
@@ -44,35 +52,80 @@ console.log(decode('craft') + decode('block') + decode('argon') + decode('meter'
 
 //'craft block argon meter bells brown croon droop'
 
+
+//days in a month
+
 function daysInMonth(month, leapYear) {
   switch (month) {
-    case 'January':
-    case 'March':
-    case 'May':
-    case 'July':
-    case 'August':
-    case 'October':
-    case 'December':
-      return result = `${month} has 31 days.`;
-      break;
-    case 'February':
-      if (leapYear === true) {
-        return result = `${month} has 29 days.`;
-      }
-      if (leapYear === false) {
-        return result = `${month} has 28 days.`;
-      }
-      break;
-    case 'April':
-    case 'June':
-    case 'September':
-    case 'November':
-      return result = `${month} has 30 days.`;
-      break;
-
-    default:
-      throw new Error('Must provide a valid month');
+  case 'January':
+  case 'March':
+  case 'May':
+  case 'July':
+  case 'August':
+  case 'October':
+  case 'December':
+    return `${month} has 31 days.`;
+  case 'February':
+    if (leapYear === true) {
+      return `${month} has 29 days.`;
+    }
+    if (leapYear === false) {
+      return `${month} has 28 days.`;
+    }
+    break;
+  case 'April':
+  case 'June':
+  case 'September':
+  case 'November':
+    return `${month} has 30 days.`;
+  default:
+    throw new Error('Must provide a valid month');
   }
 }
 
-console.log(daysInMonth('February', false));
+console.log(daysInMonth('December', false));
+
+
+// rock papers scissors
+
+function game(num) {
+  const computer = Math.floor(Math.random() * 3) + 1;
+  if (num === 1) {
+    if (computer === 1) {
+      return 'Its a tie!';
+    }
+    if (computer === 2) {
+      return 'Rock loses to paper, you lose!';
+    }
+    if (computer === 3) {
+      return 'Rock beats scissors, you win!';
+    }
+  }
+  if (num === 2) {
+    if (computer === 1) {
+      return 'Paper beats rock, you win!';
+    }
+    if (computer === 2) {
+      return 'Its a tie!';
+    }
+    if (computer === 3) {
+      return 'Paper loses to scissors, you lose!';
+    }
+  }
+  if (num === 3) {
+    if (computer === 1) {
+      return 'Scissors loses to Rock, you lose!';
+    }
+    if (computer === 2) {
+      return 'Scissors beat paper, you win!';
+    }
+    if (computer === 3) {
+      return 'Its a tie!';
+    }
+  }
+  else {
+    throw new Error('Choose between 1 and 3 only.');
+  }
+}
+
+console.log(game(1));
