@@ -23,3 +23,23 @@ function beyond (num) {
 }
 
 beyond(-Infinity);
+
+function decode (string) {
+  const firstLetter = string.charAt(0);
+  if (firstLetter === 'a') {
+    return string.charAt(1);
+  } else if (firstLetter === 'b') {
+    return string.charAt(2);
+  } else if (firstLetter === 'c') {
+    return string.charAt(3);
+  } else if (firstLetter === 'd') {
+    return string.charAt(4);
+  } else {
+    return ' ';
+  }
+}
+
+console.log(decode('craft') + decode('block') + decode('argon') + decode('meter') + decode('bells') + decode('brown') + decode('croon') + decode('droop'));
+
+
+//'craft block argon meter bells brown croon droop'
