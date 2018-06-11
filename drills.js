@@ -10,6 +10,20 @@ function whoAmI(name, age) {
     const yob = yearOfBirth(age);
     console.log(`Hi, my name is ${name} and Im ${age} years old`);
     console.log(`I was born in ${yob}`);
+    if (age === '') {
+        throw new Error("Missing age")
+    }
+    if (name === '') {
+        throw new Error("Missing name")
+    }
 }
 
-whoAmI('Cris', -5);
+try {
+  whoAmI('Chris', -5);    // Will throw error and be caught below
+  whoAmI('Chris');
+  whoAmI('', -5)
+} catch(e) {
+  console.error(e.message);
+}
+
+whoAmI('', 8);
